@@ -53,7 +53,7 @@ class CompetitionMetric:
         y_true_np = self._to_numpy_1d(y_true)
         y_pred_np = self._to_numpy_1d(y_pred_proba)
         
-        y_pred_np = np.clop(y_pred_np, self.eps, 1.0 - self.eps)
+        y_pred_np = np.clip(y_pred_np, self.eps, 1.0 - self.eps)
         
         ap = self._compute_ap(y_true_np, y_pred_np)
         wll = self._compute_wll(y_true_np, y_pred_np)

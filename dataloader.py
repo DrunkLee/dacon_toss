@@ -1,4 +1,4 @@
-import cudf
+import cudf, pandas as pd
 from utils import class_print, print_sys_usage
 
 class DataLoader:
@@ -28,3 +28,5 @@ class DataLoader:
         class_print(self, f"저장 완료 → {save_path}")
         print_sys_usage("after save_parquet")
     
+    def to_pandas(gdf: cudf.DataFrame) -> pd.DataFrame:
+        return gdf.to_pandas()
